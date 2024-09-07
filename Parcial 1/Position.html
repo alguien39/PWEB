@@ -7,44 +7,62 @@
     <Style type="text/css">
         .caja {
                 border: 5px;
+                border-color: rgb(3, 170, 170);
                 width: fit-content;
                 height: fit-content;
-                background-color: chartreuse;
+                background-color: rgb(61, 209, 194);
                 border-style:groove;
                 text-align: center;
-                font-size: larger;
-                display: inline-block;
+                font-size: xx-large;
+                display: inline;
             }
-        #caja2{
-            position:  relative;
+        #caja1{
+            display: block;
+            padding: 50px 5px;
+            position:  static;
             top: 10px;
             left: 10px;
         }
-        #caja1 {
-            Position: absolute;
-            top: 20px;
-            right: 30px;
+        #caja2 {
+            Position: relative;
+            bottom: 10px;
+            left: 120px;
         }
         #caja3 {
-            Position: fixed;
-            bottom: 20px;
-            left: 40px;
+            Position: absolute;
+            left: 300px;
+            top: 10px;
+            bottom: 0px;
         }
-        #caja {
+        #caja4 {
+            position: fixed;
+            top: 0px;
+            right: 0px;
+            top: 10px;
+        }
+        #caja5{
             position: sticky;
+            top: 0px;
+            bottom: 0px;
+            left: 450px;
         }
     </Style>
 </head>
 <body>
-    <div id="caja">
-        <div class="caja">
-            Cajita
-        </div>
-    </div>
-    <div class="caja" id="caja2">Caja 2</div>
-    <div class="caja" id="caja1">Caja 1</div>
-    <div class="caja" id="caja3">Caja 3</div>
-    <div class="caja" id="caja4">Caja 4</div>
-    <div class="caja" id="caja5">Caja 5</div>
+    <div class="caja" id="caja1">Estatica</div>
+    <div class="caja" id="caja2">Relativa</div>
+    <div class="caja" id="caja1">Estatica</div>
+    <div class="caja" id="caja5">Pegajosa</div>
+    <div class="caja" id="caja1">Estatica</div>
+    <div class="caja" id="caja1">Estatica</div>
+    <div class="caja" id="caja1">Estatica</div>
+    <div class="caja" id="caja1">Estatica</div>
+    <div class="caja" id="caja1">Estatica</div>
+    <div class="caja" id="caja5">Pegajosa</div>
+    <div class="caja" id="caja1">Estatica</div>
+    <div class="caja" id="caja1">Estatica</div>
+    <div class="caja" id="caja1">Estatica</div>
+    <div class="caja" id="caja3">Absoluta</div>
+    <div class="caja" id="caja4">Amarrada</div>
 </body>
 </html>
