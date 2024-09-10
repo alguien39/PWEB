@@ -11,17 +11,39 @@
         }
         .CajitaLeft{
             float: left;
-            display: inline;
+            display: inline-block;
             background-color: greenyellow;
             border-radius: 15%;
-            border-style:inset;
+            border-style: inset;
+            width: 100px;
+            height: 50px;
+            margin: 10px;
+            text-align: center;
         }
         .CajitaRight{
             float: right;
-            display: inline;
+            display: inline-block;
             background-color: rgb(117, 36, 36);
             border-radius: 15%;
-            border-style:inset;
+            border-style: inset;
+            width: 100px;
+            height: 50px;
+            margin: 10px;
+            text-align: center;
+            color: white;
+        }
+        .ClearRight{
+            float: left;
+            clear: right;
+            display: inline-block;
+            background-color: rgb(87, 36, 117);
+            border-radius: 15%;
+            border-style: inset;
+            width: auto;
+            height: 50px;
+            margin: 10px;
+            text-align: center;
+            color: white;
         }
     </style>
 </head>
@@ -40,6 +62,15 @@
             caja4
         </div>
     </div>
-
+    <div id="Texto">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius repellat quis dolores ab excepturi, reprehenderit aliquam labore eligendi? Vel sint saepe asperiores sequi fuga tempore officia nulla pariatur est impedit?</p>
+    </div>
+    <div id="cajas2">
+        <div class="ClearRight">
+            Nada a la derecha
+        </div>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum error eius tenetur sapiente dolorem nulla nobis doloremque consectetur quam a explicabo rerum fugiat, quia eos, culpa, expedita porro. Molestiae, odio!
+        
+    </div>
 </body>
 </html>

@@ -6,26 +6,31 @@
     <title>Document</title>
     <style>
         .cajaInline{
-            border: 5px;
-                width: fit-content;
-                height: fit-content;
-                background-color: chartreuse;
+                border-width: 5px;
+                border-color: rgb(75, 148, 2);
+                padding: 10px 5px 10px 5px;
+                margin: 15px;
+                width: 50px;
+                height: 80px;
+                background-color: rgb(97, 192, 2);
                 border-style:groove;
                 text-align: center;
-                font-size: larger;
-            display: inline;
-            border: 1px solid blue;
+                font-size: large;
+                display: inline;
         }
         .CajaBlock{
-            border: 5px;
-                width: fit-content;
-                height: fit-content;
-                background-color: chartreuse;
+            border-width: 15px;
+            border-color: rgb(134, 3, 3);
+            border-style: groove;
+            padding: 10px;
+            margin:25px;
+                width: 350px;
+                height: 30px;
+                background-color:rgb(180, 3, 3);
                 border-style:groove;
                 text-align: center;
                 font-size: larger;
             display: block;
-            border: 1px solid red;
         }
 
     </style>
@@ -33,9 +38,9 @@
 <body>
 <div class="cajaInline">Linea</div> 
 <div class="cajaInline">Linea</div>  
-<div class="CajaBlock">Bloque
-<div class="cajaInline">Linea</div> 
-
+<div class="CajaBlock">
+    Bloque
+    <div class="cajaInline" style="font-style: italic;">Linea dentro de bloque</div> 
 </div> 
 <div class="cajaInline">Linea</div> 
 <div class="cajaInline">Linea</div> 
