@@ -11,50 +11,121 @@
             box-sizing: border-box;
         }
         body {
-            background-color: rgb(172, 249, 178);
+            background-color: #EBD3F8;
             border-style: unset;
-            line-height: 1.5;
-            -webkit-font-smoothing: antialiased;
+            font-family: monospace;
         }
-        img, picture, video, canvas, svg {
-            display: block;
-             max-width: 100%;
+        
+        header{
+            background-color: #7A1CAC;
+            padding: 5px 0;
+            width: 100%;
+            height: 80px;
+            position: sticky;
+            top: 0;
+        }
+        main{
+            padding: 20px 10px 15px 10px;
+        }
+        footer {
+            background-color: #;
+            padding: 10px;
+            width: 100%;
+            position: fixed;
+            bottom: 0;
         }
         img{
-            float: right; 
+            display: block;
+            max-width: 18%;
             margin-left: 15px;
-            width: 200px; height: auto;
+            height:auto;
         }
-        #ImagenPeriquito{
-            width: 200px; height: auto;
+        #LogoTGA{
+            float: left; 
         }
-        p, h1, h2, h3, h4, h5, h6 {
-            overflow-wrap: break-word;
+        h1, h2, h3, h4, h5, h6 {
             text-align: center;
         }
-        .Cajita{
-            background-color: azure;
-            border-radius: 5%;
-            border: 10px groove rgb(59, 0, 0);
-            width: 80%;
+        h1{
+            font-size: 40px;
+        }
+        .Cajita {
+            background-color: #AD49E1;
+            border-top-right-radius: 10%;
+            border-bottom-right-radius: 10%;
+            border-left: ridge  25px #2E073F;
+            width: 100%;
+            margin: 30px auto;
+            padding: 5px;
+        }
+        #Definición{
+            text-align: left;
+            font-size: 25px;
+            padding: 10px;
+        }
+        #Cabecilla{
+            font-size: 55px;
+            font-style: bold;
+        }
+        #Pie {
+            float: left;
+            text-align: left;
+        }
+        #PieDerecho {
+            float: right;
+            text-align: right;
+        }
+        .Galeria{
+            display: grid;
+            grid-template-columns: repeat(auto-fit);
+            gap: 15px;
+        }
+        .ObjetoGal{
+            background-color: #7A1CAC;
+            border: 3px solid #2E073F;
+            border-radius: 5px;
+            overflow: hidden;
+            text-align: center;
+            padding: 10px;
+        }
+        .ObjetoGal img {
+            max-width: 100%;
+            height: auto;
+            display: block;
             margin: 0 auto;
         }
-        #Texto1{
-            font-family: 'Times New Roman', Times, serif;
+        .ObjetoGal p {
+            margin-top: 10px ;
         }
     </Style>
 </head>
 <body>
-    <Div style="float: right;">
-        
-    </Div>
-    
-    <div class="Cajita">
-        <h1>Desde del Deste</h1>
-        <img id="ImagenPeriquito" src="https://cdn.worldvectorlogo.com/logos/lorem-lorem-1.svg" alt="Fotito">
-        <P id="Texto1">
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minima molestiae dicta sint? Fugiat totam obcaecati tempora explicabo consequuntur. Voluptatum dolorem error nesciunt modi eum! Obcaecati, iusto? Nam culpa dolorem soluta?
+    <header id="Titulo">
+        <img id= "LogoTGA" src="https://upload.wikimedia.org/wikipedia/commons/6/67/The_Game_Awards_logo_2020.svg">
+        <h1 id="Cabecilla">
+                Game Of The Year (GotY)
+        </h1>
+    </header>
+    <main>
+        <div class="Cajita">
+            <h1>Definición</h1>
+            <p id="Definición">Juego del año (GotY) es un premio otorgado a un videojuego por varios eventos de premios y publicaciones de medios que consideran que representó lo mejor de los videojuegos ese año.</p>
+        </div>
+
+        <div class="Galeria">
+            <div class="ObjetoGal"><Img  src="" alt=""><p  Id="Desc1">The Witcher 3: Wild Hunt</p></div>
+            <div class="ObjetoGal"><Img  src="" alt=""><p Id="Desc2">Elden Ring</p></div>
+            <div class="ObjetoGal"><Img  src="" alt=""><p  Id="Desc3">Baldurs Gate III</p></div>
+            <div class="ObjetoGal"><Img  src="" alt=""><p  Id="Desc4"></p></div>
+        </div>
+    </main>
+    <footer>
+        <P id="Pie">
+            Joham Barberena Machorro #220100166  
         </P>
-    </div>
+        <p id="Pie Derecho">
+            Programacion Web
+        </p>
+    </footer>
 </body>
 </html>
