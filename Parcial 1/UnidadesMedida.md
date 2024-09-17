@@ -2,7 +2,7 @@
 
 ## Tabla de Unidades de Medida
 
-| **Unidad** | **Descripción**                                                 | **Ejemplo de Uso**   |
+| **Unidad** | **Descripción**| **Ejemplo de Uso**   |
 |------------|-----------------------------------------------------------------|----------------------|
 | `px`       | Píxeles. Unidad relativa al número de píxeles en la pantalla.    | `width: 100px;`      |
 | `%`        | Porcentaje relativo al elemento padre.                          | `width: 50%;`        |
