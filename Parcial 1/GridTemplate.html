@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <Style>
+        *{
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        .gridPorPartes{
+            display: grid;
+            width: 100vw;
+            height: 100vh;
+            grid-template-areas: 
+            'menu header main'
+            'menu footer right'
+        }
+
+        .gridPorPartes2{
+            display: grid;
+            width: 100vw;
+            height: 100vh;
+            grid-template-areas: 
+            
+        }
+
+        .gridPorPartes div{
+            border: solid 5px;
+        }
+
+        .Header{
+            grid-area: header;
+            background-color: tomato;
+        }
+        .Menu{
+            grid-area: menu;
+            background-color: aquamarine;
+        }
+        .Main{
+            grid-area: main;
+            background-color: wheat;
+        }
+        .Footer{
+            grid-area: footer;
+            background-color: crimson;
+        }
+        .Right{
+            grid-area: right;
+            background-color: rosybrown;
+        }
+    </Style>
+</head>
+<body>
+    <div class="gridPorPartes">
+        <div class="Header">
+            <P>Cabecera</P>
+        </div>
+        <div class="Menu">
+            <P>Menu</P>
+        </div>
+        <div class="Main">
+            <P>Contenido</P>
+        </div>
+        <div class="Footer">
+            <P>Pie De Pag</P>
+        </div>
+        <div class="right">
+            <P>Derecha</P>
+        </div>
+    </div>
+</body>
+</html>
