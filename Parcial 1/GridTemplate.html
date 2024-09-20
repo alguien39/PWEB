@@ -3,72 +3,269 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <Style>
-        *{
+    <title>LimpiezaTec lo mejor de lo mejor</title>
+    <style>
+        * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
+            font-family: Arial, sans-serif;
         }
-        .gridPorPartes{
+
+        body, html {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .header {
+            position: sticky;
+            top: 0;
+            background-color: #333;
+            color: white;
+            padding: 10px 20px; /* Ajustar padding para evitar crecimiento */
+            font-size: 1.5em;
+            z-index: 1000;
+            display: flex; /* Usar flex para la alineación */
+            flex-direction: column; /* Mantener elementos en columna */
+          
+        }
+
+        .ContenedorG {
+            display: flex;
+            gap: 10px;
+            flex-wrap: nowrap; 
+            justify-content: flex-start;
+        }
+
+        .item {
+            background-color: #444;
+            padding: 10px 15px;
+            border-radius: 5px;
+            color: white;
+            font-size: 15px;
+            text-align: center;
+            width: 100px; /* Ancho fijo para evitar crecimiento */
+            max-width: 100px; /* Máximo ancho para evitar desbordamiento */
+            cursor: pointer;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+
+        .item:hover {
+            transform: scale(1.05); /* Pequeño zoom al hacer hover */
+            background-color: #555;
+        }
+
+        .body {
             display: grid;
-            width: 100vw;
-            height: 100vh;
-            grid-template-areas: 
-            'menu header main'
-            'menu footer right'
+            grid-template-columns: 20% 60% 20%;
+            grid-template-areas:
+            "Menu   Main   Right";
+            gap: 20px;
+            padding: 20px;
+            flex: 1;
+            background-color: #ffffff;
         }
 
-        .gridPorPartes2{
+        .menu {
+            grid-area: Menu;
+            background-color: #fafafa;
+            border-right: 5px inset #666;
+            border-bottom: 5px inset #000000;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .menu .box {
+            background-color: #fff;
+            padding: 20px;
+            border: 1px solid #ddd;
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+
+        .menu .box:hover {
+            transform: scale(1.05);
+        }
+
+        .main {
+            grid-area: Main;
+            background-color: #f9f9f9;
+            border-right: 5px inset #666;
+            border-bottom: 5px inset #000000;
+            padding: 20px;
+        }
+
+        .main img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+        }
+
+        .main h2, .main p {
+            margin: 10px 0;
+        }
+
+        .right {
+            grid-area: Right;
+            background-color: #fafafa;
+            border-right: 5px inset #666;
+            border-bottom: 5px inset #000000;
+            padding: 20px;
+        }
+
+        .right .box {
+            margin-bottom: 20px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+
+        .right .box:hover {
+            transform: scale(1.05);
+        }
+
+        .footer {
+            flex: 0 1 60px;
+            background-color: #333;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+        }
+
+        button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            background-color: #555;
+            color: white;
+            font-size: 15px;
+        }
+
+        button:hover {
+            background-color: #666;
+        }
+
+        .gridImagenes {
             display: grid;
-            width: 100vw;
-            height: 100vh;
+            width: 100%;
+            height: 15%;
+            grid-template-columns: 60% 40%; 
             grid-template-areas: 
-            
+                "RgtImg LftImg1"
+                "RgtImg LftImg2";
+            overflow: hidden;
+        }
+        .RgtImg, .LftImg1, .LftImg2 {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+        .gridImagenes img {
+            width: 100%;
+            height: 100%; 
+            object-fit: fill;
+        }
+        .RgtImg {
+            grid-area: RgtImg;
+        }
+        .LftImg1 {
+            grid-area: LftImg1;
+        }
+        .LftImg2 {
+            grid-area: LftImg2;
         }
 
-        .gridPorPartes div{
-            border: solid 5px;
-        }
-
-        .Header{
-            grid-area: header;
-            background-color: tomato;
-        }
-        .Menu{
-            grid-area: menu;
-            background-color: aquamarine;
-        }
-        .Main{
-            grid-area: main;
-            background-color: wheat;
-        }
-        .Footer{
-            grid-area: footer;
-            background-color: crimson;
-        }
-        .Right{
-            grid-area: right;
-            background-color: rosybrown;
-        }
-    </Style>
+    </style>
 </head>
 <body>
-    <div class="gridPorPartes">
-        <div class="Header">
-            <P>Cabecera</P>
+    <div class="container">
+        <div class="header">
+            
+            <div class="ContenedorG">
+                <h1>LimpiezaTEC</h1>
+                <div class="item">Home</div>
+                <div class="item">Hogar & Jardín</div>
+                <div class="item">Cocina</div>
+                <div class="item">Tecnología</div>
+                <div class="item">Salud y Ocio</div>
+                <div class="item">Más</div>
+            </div>
         </div>
-        <div class="Menu">
-            <P>Menu</P>
+        <div class="body">
+            <div class="menu">
+                <h3>Lo último</h3>
+                <div class="box">
+                    <h4>Contenido</h4>
+                </div>
+                <div class="box">
+                    <h4>Contenido</h4>
+                </div>
+                <div class="box">
+                    <h4>Contenido</h4>
+                </div>
+                <div class="box">
+                    <h4>Contenido</h4>
+                </div>
+            </div>
+            <div class="main">
+                <div class="gridImagenes">
+                    <div class="RgtImg">
+                        <img src="https://i.pinimg.com/564x/b2/ab/a1/b2aba1482f799da476b53889464ff204.jpg" alt="Imagen Derecha">
+                    </div>
+                    <div class="LftImg1">
+                            <img src="https://i.pinimg.com/564x/6f/78/4b/6f784b607d8310720bf60797ae547ce7.jpg" alt="Imagen Izquierda 1">
+                    </div>
+                    <div class="LftImg2">
+                            <img src="https://i.pinimg.com/564x/9f/44/78/9f44783170a30ac8eea87d14ad935d90.jpg" alt="Imagen Izquierda 2">
+                    </div>
+                </div>
+                <h2>14 Hola joham despiues de mil intentos y chat gpt aqui tienes tu pagina</h2>
+                <p>djhcvwjwev sjc sh.</p>
+                <div class="box">
+                    <h3>Título 1</h3>
+                    <p>Contenido de la caja 1.</p>
+                </div>
+                <div class="box">
+                    <h3>Título 2</h3>
+                    <p>Contenido de la caja 2.</p>
+                </div>
+                <div class="box">
+                    <h3>Título 3</h3>
+                    <p>Contenido de la caja 3.</p>
+                </div>
+            </div>
+            <div class="right">
+                <div class="box">
+                    <h3>Ofertas Diarias</h3>
+                    <p>Iphone 16</p>
+                </div>
+                <div class="box">
+                    <h3>Mejor Precio</h3>
+                    <p>Tecnm </p>
+                </div>
+                <div class="box">
+                    <h3>Subscripciones</h3>
+                    <p>Hkjebiwbrvkeb</p>
+                </div>
+            </div>
         </div>
-        <div class="Main">
-            <P>Contenido</P>
-        </div>
-        <div class="Footer">
-            <P>Pie De Pag</P>
-        </div>
-        <div class="right">
-            <P>Derecha</P>
+        <div class="footer">
+            <p>Pie de Página</p>
         </div>
     </div>
 </body>
