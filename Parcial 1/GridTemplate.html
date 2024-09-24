@@ -30,12 +30,20 @@
             top: 0;
             background-color: #333;
             color: white;
-            padding: 10px 20px; /* Ajustar padding para evitar crecimiento */
+            padding: 10px 20px;
             font-size: 1.5em;
             z-index: 1000;
-            display: flex; /* Usar flex para la alineación */
-            flex-direction: column; /* Mantener elementos en columna */
-          
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .header h1 {
+            font-size: 1.8em;
+        }
+
+        img{
+            object-fit: fill;
         }
 
         .ContenedorG {
@@ -87,10 +95,13 @@
 
         .menu .box {
             background-color: #fff;
+            width: 300px;
+            height: auto;
             padding: 20px;
             border: 1px solid #ddd;
             transition: transform 0.3s ease;
             cursor: pointer;
+            overflow: auto;
         }
 
         .menu .box:hover {
@@ -103,6 +114,11 @@
             border-right: 5px inset #666;
             border-bottom: 5px inset #000000;
             padding: 20px;
+            display: flex;
+            flex-direction: column; /* Column layout */
+            align-items: center; /* Center horizontally */
+            text-align: center; /* Center text */
+            justify-content: flex-start; /* Align items at the top */
         }
 
         .main img {
@@ -113,6 +129,48 @@
 
         .main h2, .main p {
             margin: 10px 0;
+            max-width: 800px;
+        }
+
+        .gallery-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 20px auto;
+        }
+
+        .gallery-item {
+            flex: 1;
+            max-width: 30%;
+            text-align: center;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+
+        .gallery-item p {
+            padding: 10px;
+            font-size: 1.1em;
+            color: #333;
+            background-color: #f5f5f5;
+            margin: 0;
         }
 
         .right {
@@ -124,6 +182,8 @@
         }
 
         .right .box {
+            width: 300px;
+            height: auto;
             margin-bottom: 20px;
             padding: 10px;
             border: 1px solid #ddd;
@@ -133,6 +193,20 @@
 
         .right .box:hover {
             transform: scale(1.05);
+        }
+
+        .right .box p{
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            text-align: center;
+        }
+
+        .right h2{
+            text-align: center;
+        }
+
+        .box img{
+            width: 100%;
+            height: 100%;
         }
 
         .footer {
@@ -158,109 +232,136 @@
         button:hover {
             background-color: #666;
         }
-
-        .gridImagenes {
-            display: grid;
-            width: 100%;
-            height: 15%;
-            grid-template-columns: 60% 40%; 
-            grid-template-areas: 
-                "RgtImg LftImg1"
-                "RgtImg LftImg2";
-            overflow: hidden;
-        }
-        .RgtImg, .LftImg1, .LftImg2 {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
-        }
-        .gridImagenes img {
-            width: 100%;
-            height: 100%; 
-            object-fit: fill;
-        }
-        .RgtImg {
-            grid-area: RgtImg;
-        }
-        .LftImg1 {
-            grid-area: LftImg1;
-        }
-        .LftImg2 {
-            grid-area: LftImg2;
-        }
-
     </style>
 </head>
 <body>
     <div class="container">
         <div class="header">
-            
             <div class="ContenedorG">
-                <h1>LimpiezaTEC</h1>
-                <div class="item">Home</div>
-                <div class="item">Hogar & Jardín</div>
-                <div class="item">Cocina</div>
-                <div class="item">Tecnología</div>
-                <div class="item">Salud y Ocio</div>
-                <div class="item">Más</div>
+                <h1>Curiosidades-Blog</h1>
+                <div class="item">Inicio</div>
+                <div class="item">Películas</div>
+                <div class="item">Personajes</div>
+                <div class="item">Curiosidades</div>
+                <div class="item">Contacto</div>
             </div>
         </div>
         <div class="body">
             <div class="menu">
-                <h3>Lo último</h3>
+                <h2>Cronologia</h2>
                 <div class="box">
-                    <h4>Contenido</h4>
+                    <h4>La Comunidad del Anillo</h4>
+                    <p><strong>Estreno:</strong> 2001</p>
+                    <p><strong>Director:</strong> Peter Jackson</p>
+                    <p><strong>Duración:</strong> 178 minutos</p>
                 </div>
                 <div class="box">
-                    <h4>Contenido</h4>
+                    <h4>Las Dos Torres</h4>
+                    <p><strong>Estreno:</strong> 2002</p>
+                    <p><strong>Director:</strong> Peter Jackson</p>
+                    <p><strong>Duración:</strong> 179 minutos</p>
                 </div>
                 <div class="box">
-                    <h4>Contenido</h4>
+                    <h4>El Retorno del Rey</h4>
+                    <p><strong>Estreno:</strong> 2003</p>
+                    <p><strong>Director:</strong> Peter Jackson</p>
+                    <p><strong>Duración:</strong> 201 minutos</p>
                 </div>
-                <div class="box">
-                    <h4>Contenido</h4>
+                <h2>Personajes Principales</h2>
+                <div class="box" onclick="window.location.href='https://es.wikipedia.org/wiki/Elijah_Wood';">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Elijah_Wood_%2847955397556%29_%28cropped%29.jpg/800px-Elijah_Wood_%2847955397556%29_%28cropped%29.jpg" alt="Elijah Wood">
+                    <h4>Frodo Baggins</h4>
+                    <p>Interpretado por Elijah Wood, Frodo es un hobbit encargado de llevar el Anillo Único a Mordor.</p>
+                </div>
+                <div class="box" onclick="window.location.href='https://es.wikipedia.org/wiki/Ian_McKellen';">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/SDCC13_-_Ian_McKellen.jpg/800px-SDCC13_-_Ian_McKellen.jpg" alt="Ian McKellen">
+                    <h4>Gandalf</h4>
+                    <p>Interpretado por Ian McKellen, Gandalf es un poderoso mago que guía a la comunidad del anillo.</p>
+                </div>
+                <div class="box" onclick="window.location.href='https://es.wikipedia.org/wiki/Viggo_Mortensen'">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/Viggo_Mortensen_B_%282020%29.jpg/210px-Viggo_Mortensen_B_%282020%29.jpg" alt="Aragorn">
+                    <h4>Aragorn</h4>
+                    <p>Interpretado por Viggo Mortensen, Aragorn es el legítimo heredero al trono de Gondor.</p>
                 </div>
             </div>
             <div class="main">
-                <div class="gridImagenes">
-                    <div class="RgtImg">
-                        <img src="https://i.pinimg.com/564x/b2/ab/a1/b2aba1482f799da476b53889464ff204.jpg" alt="Imagen Derecha">
+                <div class="gallery-container">
+                    <div class="gallery-item" onclick="window.location.href='https://es.wikipedia.org/wiki/El_Señor_de_los_Anillos:_La_Comunidad_del_Anillo';">
+                        <img src="https://static-1.ivoox.com/audios/9/3/6/8/641501138639_XXL.jpg" alt="La Comunidad del Anillo">
+                        <p>La Comunidad del Anillo</p>
                     </div>
-                    <div class="LftImg1">
-                            <img src="https://i.pinimg.com/564x/6f/78/4b/6f784b607d8310720bf60797ae547ce7.jpg" alt="Imagen Izquierda 1">
+                    <div class="gallery-item" onclick="window.location.href='https://es.wikipedia.org/wiki/El_Señor_de_los_Anillos:_Las_dos_torres';">
+                        <img src="https://somosnews.com.mx/wp-content/uploads/2024/04/El-sen%CC%83or-de-los-anillos-Las-dos-torres.jpg" alt="Las Dos Torres">
+                        <p>Las Dos Torres</p>
                     </div>
-                    <div class="LftImg2">
-                            <img src="https://i.pinimg.com/564x/9f/44/78/9f44783170a30ac8eea87d14ad935d90.jpg" alt="Imagen Izquierda 2">
+                    <div class="gallery-item" onclick="window.location.href='https://es.wikipedia.org/wiki/El_Señor_de_los_Anillos:_El_retorno_del_Rey';">
+                        <img src="https://www.latercera.com/resizer/pXPSz6_Tt065mIaJWPV5tX6SrIw=/900x600/filters:focal(262x358:272x348)/cloudfront-us-east-1.images.arcpublishing.com/copesa/KWYO3W2Y3RABLI6BCYIRHZF6GQ.jpg" alt="El Retorno del Rey">
+                        <p>El Retorno del Rey</p>
                     </div>
                 </div>
-                <h2>14 Hola joham despiues de mil intentos y chat gpt aqui tienes tu pagina</h2>
-                <p>djhcvwjwev sjc sh.</p>
+                <h2>El Universo de El Señor de los Anillos: Guía Completa de las Películas</h2>
+                <p>La trilogía cinematográfica de El Señor de los Anillos es una de las adaptaciones más aclamadas 
+                    de la literatura fantástica. Basada en las novelas de J.R.R. Tolkien, las películas dirigidas por 
+                    Peter Jackson han dejado una huella imborrable en la cultura popular, transportando a los espectadores a la 
+                    Tierra Media, un mundo lleno de héroes, criaturas mágicas y paisajes impresionantes.</p>
                 <div class="box">
-                    <h3>Título 1</h3>
-                    <p>Contenido de la caja 1.</p>
+                    <h3>1-El Señor de los Anillos: La Comunidad del Anillo (2001)</h3>
+                    <p>Sinopsis: Frodo Bolsón, un hobbit de la Comarca, se embarca en una misión peligrosa para destruir el Anillo Único, un artefacto de poder inmenso creado por el malvado Sauron. Con la ayuda de un grupo variado de personajes, 
+                        incluyendo a Aragorn, Legolas y Gandalf, debe enfrentar peligros y tentaciones en su camino hacia el Monte del Destino.</p>
+                    <p>Premios: Ganadora de 4 premios Oscar, incluyendo Mejor Fotografía y Mejor Banda Sonora.</p>
                 </div>
                 <div class="box">
-                    <h3>Título 2</h3>
-                    <p>Contenido de la caja 2.</p>
+                    <h3>2-El Señor de los Anillos: Las Dos Torres (2002)</h3>
+                    <p>Sinopsis: La Comunidad se ha separado. Frodo y Sam continúan su viaje hacia Mordor acompañados por la ambigua criatura Gollum. Mientras tanto, Aragorn, Legolas y Gimli persiguen a los orcos que han capturado a Merry y Pippin. La guerra se cierne sobre Rohan, y una nueva alianza debe formarse para resistir la creciente sombra de Sauron.</p>
+                    <p>Premios: Ganadora de 2 premios Oscar, incluyendo Mejores Efectos Visuales.</p>
                 </div>
                 <div class="box">
-                    <h3>Título 3</h3>
-                    <p>Contenido de la caja 3.</p>
+                    <h3>3-El Señor de los Anillos: El Retorno del Rey (2003)</h3>
+                    <p>Sinopsis: La batalla final por la Tierra Media está por comenzar. Frodo y Sam, guiados por Gollum, se acercan a Mordor mientras el resto de sus compañeros luchan para distraer a las fuerzas de Sauron. El destino de todos los pueblos libres depende del éxito de su misión. ¿Podrá la fortaleza de los hobbits 
+                        superar la corrupción del Anillo Único?</p>
+                    <p>Premios: Ganadora de 11 premios Oscar, incluyendo Mejor Película y Mejor Director.</p>
                 </div>
             </div>
             <div class="right">
+                <h2>Director</h2>
+                <div class="box" onclick="window.location.href='https://es.wikipedia.org/wiki/Peter_Jackson';">
+                    <img src="https://mx.web.img3.acsta.net/medias/nmedia/18/35/22/93/19773857.jpg" alt="Peter Jackson">
+                    <p>Peter Jackson</p>
+                </div>
+                <h2>Curiosidades</h2>
                 <div class="box">
-                    <h3>Ofertas Diarias</h3>
-                    <p>Iphone 16</p>
+                    <h4>Curiosidad 1</h4>
+                    <p>¿Sabías que las escenas de Rivendel fueron grabadas en el Parque Nacional Tongariro, Nueva Zelanda?</p>
                 </div>
                 <div class="box">
-                    <h3>Mejor Precio</h3>
-                    <p>Tecnm </p>
+                    <h4>Curiosidad 2</h4>
+                    <p>El anillo utilizado en la trilogía fue hecho a mano y tiene más de 15 versiones diferentes.</p>
+                </div>
+                    <h2>Tráiler</h2>
+                <div class="box" onclick="window.location.href='https://www.youtube.com/watch?v=V75dMMIW2B4';">
+                    <img src="https://www.denofgeek.com/wp-content/uploads/2023/02/lord-of-the-rings-return-of-the-king.jpg" alt="Trailer Thumbnail">
+                    <p>Ver Tráiler</p>
+                </div>
+                <h2>Datos De La Produccion</h2>
+                <div class="box">
+                    <h4>Dato Curioso 1</h4>
+                    <p>El actor Viggo Mortensen compró el caballo que montó en la película, ya que se encariñó mucho con él.</p>
                 </div>
                 <div class="box">
-                    <h3>Subscripciones</h3>
-                    <p>Hkjebiwbrvkeb</p>
+                    <h4>Dato Curioso 2</h4>
+                    <p>El grito de dolor de Aragorn al patear un casco en "Las Dos Torres" fue real, ya que Viggo se rompió un dedo en esa escena.</p>
+                </div>
+                <div class="box">
+                    <h4>Dato Curioso 3</h4>
+                    <p>El lenguaje élfico utilizado en las películas fue desarrollado basándose en lenguas reales como el finlandés y el galés.</p>
+                </div>
+                <h2>Ficha Técnica</h2>
+                <div class="box">
+                    <h4>Ficha Técnica</h4>
+                    <p><strong>Duración:</strong> 178 minutos</p>
+                    <p><strong>Estreno:</strong> 2001</p>
+                    <p><strong>Presupuesto:</strong> $93 millones</p>
+                    <p><strong>Recaudación:</strong> $871 millones</p>
                 </div>
             </div>
         </div>
