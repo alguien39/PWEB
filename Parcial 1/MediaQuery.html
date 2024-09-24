@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0px;
+            margin: 0px;
+
+        }
+
+        .Contenedor{
+            width: 100vw;
+            display: flex;
+        }
+
+        .Hijos{
+            border: 1px groove chartreuse;
+            background-color: antiquewhite;
+            flex-grow: 1;
+            text-align: center;
+        }
+
+        @media screen AND (max-width:500px) {
+            .Contenedor{
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="Contenedor">
+        <Div class="Hijos">Hijo1</Div>
+        <Div class="Hijos">Hijo2</Div>
+        <Div class="Hijos">Hijo3</Div>
+        <Div class="Hijos">Hijo4</Div>
+        <Div class="Hijos">Hijo5</Div>
+        <Div class="Hijos">Hijo6</Div>
+    </div>
+</body>
+</html>
