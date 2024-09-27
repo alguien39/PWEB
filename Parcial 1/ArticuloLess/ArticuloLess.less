@@ -1,98 +1,122 @@
-        @Color-Fondo : #B9B4C7;
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        body {
-            background-color: @Color-Fondo;
-            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-        }
-        header {
-            background-color: #5C5470;
-            padding: 5px 0;
-            width: 100%;
-            height: 80px;
-            position: sticky;
-            top: 0;
-            font-family: fantasy;
-        }
-        main {
-            padding: 20px 10px 15px 10px;
-        }
-        footer {
-            background-color: #5C5470;
-            padding: 10px;
-            width: 100%;
-            position: sticky;
-            bottom: 0px;
-            color: #FAF0E6;
-        }
-        #LogoTGA {
-            float: left;
-            max-height: 100%; 
-            width: auto;
-        }
-        h1{
-            font-family: 'Times New Roman', Times, serif;
-            text-align: center;
-            font-size: 50px;
-        }
-        h2 {
-            font-family: fantasy;
-            text-align: left;
-            font-size: 40px;
-            padding-left: 10px
-        }
-        .Cajita {
-            background-color: #EBD3F8;
-            border-top-right-radius: 10%;
-            border-bottom-right-radius: 10%;
-            border-left: ridge 25px #352F44;
-            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
-            width: 100%;
-            margin: 20px auto;
-            padding: 5px;
-        }
-        #Definición {
-            text-align: left;
-            font-size: 25px;
-            padding: 10px;
-        }
-        .Galeria {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 15px;
-            justify-content: center;
-        }
-        .ObjetoGal {
-            background-color: #5C5470;
-            border: 3px solid #352F44;
-            border-radius: 5px;
-            text-align: center;
-            padding: 10px;
-            flex-basis: calc(15% - 30px);
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            height: 350px;
-            box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.856); /* Sombra en las tarjetas */
-            transition: transform 0.3s ease-in-out;
-        }
-        .ObjetoGal:hover {
-            transform: scale(1.10); /* Efecto al pasar el cursor */
-            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.959); /* Aumenta la sombra al hover */
-        }
-        .ObjetoGal img {
-            max-width: 100%;
-            width: 200px;
-            height: 250px;
-            display: block;
-            margin: 0 auto;
-            border-radius: 5%;
-        }
-        .ObjetoGal p {
-            font-family: fantasy;
-            margin-top: 10px;
-            font-size: 30px;
-        }
+@Color-Fondo : #B9B4C7;
+@Color-Blanco : #FAF0E6;
+@Color-Morado : #5C5470;
+
+/* Definición de Mixins */
+.rounded-corner(@radius) {
+    border-radius: @radius;
+}
+
+.box-shadow(@x, @y, @blur, @color) {
+    box-shadow: @x @y @blur @color;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: @Color-Fondo;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+header {
+    background-color: @Color-Morado;
+    padding: 5px 0;
+    width: 100%;
+    height: 80px;
+    position: sticky;
+    top: 0;
+    font-family: fantasy;
+}
+
+main {
+    padding: 20px 10px 15px 10px;
+}
+
+footer {
+    background-color: @Color-Morado;
+    padding: 10px;
+    width: 100%;
+    position: sticky;
+    bottom: 0px;
+    color: @Color-Blanco;
+}
+
+#LogoTGA {
+    float: left;
+    max-height: 100%; 
+    width: auto;
+}
+
+.Cajita {
+    background-color: #EBD3F8;
+    border-top-right-radius: 10%;
+    border-bottom-right-radius: 10%;
+    border-left: ridge 25px @Color-Morado;
+    .box-shadow(5px, 5px, 10px, rgba(0, 0, 0, 0.2)); /* Uso del mixin */
+    width: 100%;
+    margin: 20px auto;
+    padding: 5px;
+    h1 { /* Anidado */
+        font-family: 'Times New Roman', Times, serif;
+        text-align: center;
+        font-size: 50px;
+    }
+    h2 { /* Anidado */
+        font-family: fantasy;
+        text-align: left;
+        font-size: 40px;
+        padding-left: 10px
+    }
+}
+
+#Definición {
+    text-align: left;
+    font-size: 25px;
+    padding: 10px;
+}
+
+.Galeria {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+}
+
+/*Anidacion de CSS*/
+
+.ObjetoGal {
+    background-color: @Color-Morado;
+    border: 3px solid #352F44;
+    .rounded-corner(5px); /* Uso del mixin */
+    text-align: center;
+    padding: 10px;
+    flex-basis: calc(15% - 30px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 350px;
+    .box-shadow(3px, 3px, 10px, rgba(0, 0, 0, 0.856)); /* Uso del mixin */
+    transition: transform 0.3s ease-in-out;
+    img { /* Anidado */
+        max-width: 100%;
+        width: 200px;
+        height: 250px;
+        display: block;
+        margin: 0 auto;
+        .rounded-corner(5%); /* Uso del mixin */
+    }
+    p { /* Anidado */
+        font-family: fantasy;
+        margin-top: 10px;
+        font-size: 30px;
+    }
+}
+
+.ObjetoGal:hover {
+    transform: scale(1.10); /* Efecto al pasar el cursor */
+    .box-shadow(5px, 5px, 15px, rgba(0, 0, 0, 0.959)); /* Aumenta la sombra al hover */
+}

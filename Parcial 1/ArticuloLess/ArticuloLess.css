@@ -1,3 +1,4 @@
+/* Definición de Mixins */
 * {
   margin: 0;
   padding: 0;
@@ -32,26 +33,29 @@ footer {
   max-height: 100%;
   width: auto;
 }
-h1 {
-  font-family: 'Times New Roman', Times, serif;
-  text-align: center;
-  font-size: 50px;
-}
-h2 {
-  font-family: fantasy;
-  text-align: left;
-  font-size: 40px;
-  padding-left: 10px;
-}
 .Cajita {
   background-color: #EBD3F8;
   border-top-right-radius: 10%;
   border-bottom-right-radius: 10%;
-  border-left: ridge 25px #352F44;
+  border-left: ridge 25px #5C5470;
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+  /* Uso del mixin */
   width: 100%;
   margin: 20px auto;
   padding: 5px;
+}
+.Cajita h1 {
+  /* Anidado */
+  font-family: 'Times New Roman', Times, serif;
+  text-align: center;
+  font-size: 50px;
+}
+.Cajita h2 {
+  /* Anidado */
+  font-family: fantasy;
+  text-align: left;
+  font-size: 40px;
+  padding-left: 10px;
 }
 #Definición {
   text-align: left;
@@ -64,10 +68,12 @@ h2 {
   gap: 15px;
   justify-content: center;
 }
+/*Anidacion de CSS*/
 .ObjetoGal {
   background-color: #5C5470;
   border: 3px solid #352F44;
   border-radius: 5px;
+  /* Uso del mixin */
   text-align: center;
   padding: 10px;
   flex-basis: calc(15% - 30px);
@@ -76,25 +82,28 @@ h2 {
   justify-content: space-between;
   height: 350px;
   box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.856);
-  /* Sombra en las tarjetas */
+  /* Uso del mixin */
   transition: transform 0.3s ease-in-out;
 }
-.ObjetoGal:hover {
-  transform: scale(1.1);
-  /* Efecto al pasar el cursor */
-  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.959);
-  /* Aumenta la sombra al hover */
-}
 .ObjetoGal img {
+  /* Anidado */
   max-width: 100%;
   width: 200px;
   height: 250px;
   display: block;
   margin: 0 auto;
   border-radius: 5%;
+  /* Uso del mixin */
 }
 .ObjetoGal p {
+  /* Anidado */
   font-family: fantasy;
   margin-top: 10px;
   font-size: 30px;
+}
+.ObjetoGal:hover {
+  transform: scale(1.1);
+  /* Efecto al pasar el cursor */
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.959);
+  /* Aumenta la sombra al hover */
 }
