@@ -103,12 +103,12 @@
     font-weight: bold;
   }
 
-  tbody td:hover p{
-    display: initial;
-  }
-
   tbody td p{
     display: none;
+  }
+
+  tbody td:hover p{
+    display: initial;
   }
 
   @media (max-width: 768px) {
