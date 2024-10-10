@@ -18,8 +18,10 @@ function Procedimiento(){
     console.log(Variable + " " + Variable2);
     if(false){
         var NoDeBeriaExistir = "No existo";
-        console.log(NoDeBeriaExistir);
+        console.log(NoDeBeriaExistir); 
     }
 }
+
+let apellido = "Hola";
 
 Procedimiento();
