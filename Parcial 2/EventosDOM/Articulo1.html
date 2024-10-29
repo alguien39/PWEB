@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background-color: #B9B4C7;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+        header {
+            background-color: #5C5470;
+            padding: 5px 0;
+            width: 100%;
+            height: auto; /* Cambiado de altura fija a automática */
+            position: sticky;
+            top: 0;
+            font-family: fantasy;
+            display: flex;
+            align-items: center;
+        }
+        main {
+            padding: 20px 10px 15px 10px;
+        }
+        footer {
+            background-color: #5C5470;
+            padding: 10px;
+            width: 100%;
+            position: sticky;
+            bottom: 0px;
+            color: #FAF0E6;
+        }
+        #LogoTGA {
+            max-height: 80px; 
+            width: auto;
+            margin-left: 10px;
+        }
+        header h1 {
+            flex: 1;
+            text-align: center;
+            font-size: 2em; /* Usando unidades relativas */
+        }
+        h1{
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 2.5em; /* Usando unidades relativas */
+        }
+        h2 {
+            font-family: fantasy;
+            font-size: 2em; /* Usando unidades relativas */
+            padding-left: 10px;
+        }
+        .Cajita {
+            background-color: #EBD3F8;
+            border-top-right-radius: 10%;
+            border-bottom-right-radius: 10%;
+            border-left: ridge 25px #352F44;
+            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+            width: 100%; /* Asegurando que ocupe el ancho completo */
+            max-width: 800px; /* Ancho máximo opcional */
+            margin: 20px auto;
+            padding: 10px; /* Aumentando el padding para mejor espaciado */
+        }
+        #Definición {
+            text-align: left;
+            font-size: 25px;
+            padding: 10px;
+        }
+        .Galeria {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+        }
+        .ObjetoGal {
+            background-color: #5C5470;
+            border: 3px solid #352F44;
+            border-radius: 5px;
+            text-align: center;
+            padding: 10px;
+            flex-basis: calc(100% - 30px); /* Por defecto ocupa el ancho completo */
+            max-width: 200px; /* Limita el ancho máximo */
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.856);
+            transition: transform 0.3s ease-in-out;
+        }
+        .ObjetoGal:hover {
+            transform: scale(1.10); /* Efecto al pasar el cursor */
+            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.959); /* Aumenta la sombra al hover */
+        }
+        .ObjetoGal img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+            border-radius: 5%;
+        }
+        .ObjetoGal p {
+            font-family: fantasy;
+            margin-top: 10px;
+            font-size: 1.2em;
+        }
+        /* Media queries para responsividad */
+        @media (min-width: 600px) {
+            .ObjetoGal {
+                flex-basis: calc(50% - 30px); /* Dos elementos por fila */
+            }
+        }
+
+        @media (min-width: 900px) {
+            .ObjetoGal {
+                flex-basis: calc(33.33% - 30px); /* Tres elementos por fila */
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .ObjetoGal {
+                flex-basis: calc(25% - 30px); /* Cuatro elementos por fila */
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img id="LogoTGA" src="https://upload.wikimedia.org/wikipedia/commons/6/67/The_Game_Awards_logo_2020.svg" alt="Logo The Game Awards">
+        <h1>Game Of The Year (GotY)</h1>
+    </header>
+    <main>
+        <section class="Cajita">
+            <h2>Definición</h2>
+            <p>Juego del año (GotY) es un premio otorgado a un videojuego por varios eventos de premios y publicaciones de medios que consideran que representó lo mejor de los videojuegos ese año.</p>
+        </section>
+        
+        <section>
+            <h2 class="Cajita">Juegos Merecedores al GotY</h2>
+            <div class="Galeria">
+                <figure class="ObjetoGal">
+                    <img src="https://m.media-amazon.com/images/I/813JQra23oL.jpg" alt="Portada de The Witcher 3: Wild Hunt">
+                    <figcaption>The Witcher 3: Wild Hunt</figcaption>
+                </figure>
+                <figure class="ObjetoGal">
+                    <img src="https://m.media-amazon.com/images/I/61Hj5BHApPL._AC_UF1000,1000_QL80_.jpg" alt="Portada de Elden Ring">
+                    <figcaption>Elden Ring</figcaption>
+                </figure>
+                <figure class="ObjetoGal">
+                    <img src="https://preview.redd.it/wtfx3yo20dm51.jpg?auto=webp&s=75bd5d64c8507aa03fee2bd97f621328eeb7fb30" alt="Portada de Baldur's Gate III">
+                    <figcaption>Baldur's Gate III</figcaption>
+                </figure>
+                <figure class="ObjetoGal">
+                    <img src="https://m.media-amazon.com/images/I/71xnh5WM+GL.jpg" alt="Portada de Red Dead Redemption II">
+                    <figcaption>Red Dead Redemption II</figcaption>
+                </figure>
+                <figure class="ObjetoGal">
+                    <img src="https://static.displate.com/280x392/displate/2021-03-16/404db0bb1455d8d09e2ae34bb8f16bfa_f199aaacc366dbd248a6d5231e9d12cf.jpg" alt="Portada de Fallout 3">
+                    <figcaption>Fallout 3</figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <section>
+            <h2 class="Cajita">Juegos NO Merecedores al GotY</h2>
+            <div class="Galeria">
+                <figure class="ObjetoGal">
+                    <img src="https://i.pinimg.com/originals/83/09/13/830913691c59c132a03fddb8bc1f2548.jpg" alt="Portada de Spider-Man 2 PS5">
+                    <figcaption>Spider-Man 2 PS5</figcaption>
+                </figure>
+                <figure class="ObjetoGal">
+                    <img src="https://m.media-amazon.com/images/I/61FQesvdvzL.jpg" alt="Portada de Overwatch">
+                    <figcaption>Overwatch</figcaption>
+                </figure>
+                <figure class="ObjetoGal">
+                    <img src="https://prod-printler-front-as.azurewebsites.net/media/photo/142748.jpg?mode=crop&width=425&height=600&rnd=0.0.1" alt="Portada de God Of War">
+                    <figcaption>God Of War</figcaption>
+                </figure>
+            </div>
+            <section class="Cajita">
+                <h2>¿Por qué estos juegos no merecen el GotY?</h2>
+                <p>Estos juegos, aunque exitosos en ciertos aspectos, no cumplieron con las expectativas que se esperaban en términos de innovación, narrativa o jugabilidad, por lo que no fueron considerados dignos del prestigioso galardón GotY.</p>
+            </section>
+        </section>
+    </main>
+    <footer>
+        <p>Joham Barberena Machorro #220100166</p>
+        <p>Programación Web</p>
+    </footer>
+    <script>
+        document.getElementById('').addEventListener('Click',()=>{
+            console.log('Click');
+            document.getElementById().innerHTML="Cambiamos el contenido";
+        }
+        )
+    </script>
+</body>
+</html>
