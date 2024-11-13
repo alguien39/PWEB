@@ -3,21 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script src="./Form.js"></script>
+    <title>Formulario</title>
+    
 </head>
 <body>
-    <form style="display: float; float:right;">
+    <form style="float:right;" enctype="multipart/form-data" id="Forma">
         <label for="Nombre" class="form-label">Nombre Completo</label>
-        <input type="text" name="form-control" id="Nombre" placeholder="Fulano De Tal">
+        <input type="text" id="Nombre" name="Nombre" placeholder="Fulano De Tal">
         <br>
-        <label for="NumTelefono" class="form-label">Num.Telefono</label>
-        <input type="text" name="form-control" id="Nombre" placeholder="000-XXX-XX-XX">
+        <label for="Archivo" class="form-label">Subir Archivo</label>
+        <input type="file" id="Archivo" name="archivo">
         <br>
-        <label for="exampleFormControlInput1" class="form-label">Correo Electronico</label>
-        <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
-        <br>
-        <button id="btnEnviar" onclick="">Enviar</button>
+        <button type="button" id="btnEnviar">Enviar</button>
     </form>
+    <script src="./BotonPulsado.js"></script>
 </body>
 </html>
