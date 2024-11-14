@@ -13,11 +13,13 @@ app.post("/Formulario", upload.single('archivo'), (req, res) => {
     if (req.file) {
         console.log(`Archivo recibido: ${req.file.originalname}`);
         console.log('Hola ' + req.body.Nombre);
+        res.send(`Archivo recibido: ${req.file.originalname}  Hola ${req.body.Nombre}`);
     } else {
         console.log("No se recibió ningún archivo.");
+        res.status(400).send("Errorsin");
     }
 });
 
-app.listen(3000, () => {
-    console.log("Aplicación Escuchando en el puerto 3000");
+app.listen(3030, () => {
+    console.log("Aplicación Escuchando en el puerto 3030");
 });
