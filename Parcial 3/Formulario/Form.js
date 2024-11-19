@@ -8,37 +8,31 @@ const cors = require("cors");
 const app = express();
 const folder = path.join(__dirname, "archivos");
 
-// Configuración de almacenamiento personalizado con Multer
 const storage = multer.diskStorage({
     destination: (req, file, cb) => {
-        cb(null, folder); // Carpeta donde se guardarán los archivos
+        cb(null, folder);
     },
     filename: (req, file, cb) => {
-        // Guardar el archivo con su nombre original
         cb(null, file.originalname);
     },
 });
 
-// Inicializar Multer con la configuración personalizada
 const upload = multer({ storage: storage });
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cors());
 
-// Endpoint para manejar la creación del PDF
 app.post("/Formulario", upload.single("archivo"), (req, res) => {
     try {
         if (req.file) {
             console.log(`Archivo recibido: ${req.file.originalname}`);
             console.log(`Hola ${req.body.Nombre}`);
             
-            // Crear un archivo PDF
             const doc = new pdf();
             const pdfPath = path.join(folder, `${req.body.Nombre}.pdf`);
             const pdfStream = fs.createWriteStream(pdfPath);
 
-            // Escribir contenido al PDF
             doc.pipe(pdfStream);
             doc
                 .fontSize(45)
@@ -47,7 +41,6 @@ app.post("/Formulario", upload.single("archivo"), (req, res) => {
                     align: "center"
                 });
 
-            // Agregar imagen al PDF
             const imagePath = req.file.path;
             doc.image(imagePath, {
                 fit: [250, 300],
@@ -57,7 +50,6 @@ app.post("/Formulario", upload.single("archivo"), (req, res) => {
 
             doc.end();
 
-            // Cuando termine de escribir el archivo, enviar el PDF como respuesta
             pdfStream.on("finish", () => {
                 console.log("PDF creado exitosamente.");
                 res.setHeader("Content-Type", "application/pdf");
@@ -77,7 +69,6 @@ app.post("/Formulario", upload.single("archivo"), (req, res) => {
     }
 });
 
-// Escuchar en el puerto 3030
 app.listen(3030, () => {
     console.log("Aplicación escuchando en el puerto 3030");
 });
