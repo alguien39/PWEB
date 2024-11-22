@@ -1,0 +1,1 @@
+(()=>{"use strict";(s=>{console.log(`Saludos: ${s}`)})("Clasecita")})();
