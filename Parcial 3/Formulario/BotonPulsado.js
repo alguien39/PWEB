@@ -2,7 +2,7 @@ document.getElementById("btnEnviar").addEventListener("click", async function (e
     const formulario = document.getElementById("Forma");
     const datosForm = new FormData(formulario);
 
-    fetch('http://localhost:3030/Formulario', {
+    fetch('http://localhost:3030/ArchivoPDF', {
         method: 'POST',
         body: datosForm
     })
