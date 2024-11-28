@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulario</title>
-    
+    <link href="https://unpkg.com/gridjs/dist/theme/mermaid.min.css" rel="stylesheet"/>
+    <script src="https://unpkg.com/gridjs/dist/gridjs.umd.js"></script>
 </head>
 <body>
     <form style="display: block;" enctype="multipart/form-data" id="Forma">
@@ -16,6 +17,25 @@
         <br>
         <button type="button" id="btnEnviar">Enviar</button>
     </form>
-    <script src="./BotonPulsado.js"></script>
+
+    <div id="Gridcito"></div>
+
+    <script>
+        document.getElementById("btnEnviar").addEventListener("click", async function (event) {
+            // Obtener las películas desde el backend
+            const response = await fetch('http://localhost:3030/Peliculas');
+            const peliculas = await response.json();
+
+            // Configurar Grid.js con los datos obtenidos
+            new gridjs.Grid({
+                columns: ['Titulo', 'Fecha de Estreno', 'Presupuesto'],
+                data: peliculas.map(pelicula => [
+                    pelicula.Titulo, 
+                    pelicula.FechaEstreno, 
+                    pelicula.Presupuesto
+                ]),
+            }).render(document.getElementById('Gridcito')); // Renderiza el grid dentro del div con id "Gridcito"
+        });
+    </script>
 </body>
 </html>
